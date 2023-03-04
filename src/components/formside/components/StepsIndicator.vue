@@ -1,15 +1,18 @@
 <script lang="ts" setup>
 interface PropsTypes {
   step: number
-  label: string
+  label: string,
+  isActive: boolean
 }
 
-defineProps<PropsTypes>();
+withDefaults(defineProps<PropsTypes>(), {
+  isActive: false
+});
 </script>
 
 <template>
   <div class="steps-indicator--container">
-    <div class="steps-indicator--counter">1</div>
+    <div class="steps-indicator--counter" :class="{ 'is-active' : isActive }">1</div>
     <div>
       <span>Step {{ step }}</span>
       <p>{{ label }}</p>
@@ -18,6 +21,10 @@ defineProps<PropsTypes>();
 </template>
 
 <style lang="scss" scoped>
+.is-active {
+  background-color: #bee1ff;
+  color: #000;
+}
 .steps-indicator {
   &--container {
     display: flex;

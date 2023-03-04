@@ -7,6 +7,7 @@ import StepsIndicator from './components/StepsIndicator.vue';
     <steps-indicator 
       :step="1"
       label="your info"
+      :is-active="true"
     />
   </div>
 </template>
