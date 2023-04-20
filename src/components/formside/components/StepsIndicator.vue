@@ -12,7 +12,7 @@ withDefaults(defineProps<PropsTypes>(), {
 
 <template>
   <div class="steps-indicator--container">
-    <div class="steps-indicator--counter" :class="{ 'is-active' : isActive }">1</div>
+    <div class="steps-indicator--counter" :class="{ 'is-active' : isActive }">{{ step }}</div>
     <div>
       <span>Step {{ step }}</span>
       <p>{{ label }}</p>
